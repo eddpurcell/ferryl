@@ -91,6 +91,13 @@ impl Word {
                 println!("{:?}", state.data_stack);
             }))
         });
+        dictionary.push(Word{
+            name: "bye".to_string(),
+            code: Code::Primitive(Box::new(|state| {
+                println!("Bye!");
+                std::process::exit(0);
+            }))
+        });
         dictionary
     }
 }
